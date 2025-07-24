@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatiana Angulo | Makeup Artist - Beauty with Intention</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #F8F6F0 0%, #F0E6D6 100%);
+            color: #2C1810;
+            scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Diamond Shining Effects */
+        .diamond-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #fff, #D4AF37, #C4915C);
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .diamond-shine {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, #fff, transparent);
+            animation: shine 4s infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .shimmer-overlay {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 6s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+        
+        @keyframes shine {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px) rotate(45deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0) rotate(45deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px) rotate(45deg);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(44, 24, 16, 0.3), rgba(44, 24, 16, 0.3)), url('images/12_tati_hig res.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                background: linear-gradient(rgba(44, 24, 16, 0.3), rgba(44, 24, 16, 0.3)), url('images/13_tati_hig res.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            /* Center footer text on mobile */
+            footer .flex.flex-col.md\:flex-row {
+                text-align: center;
+            }
+            
+            footer .flex.flex-col.md\:flex-row > div {
+                text-align: center;
+            }
+            
+            /* Increase service photo height on mobile */
+            .service-card .h-56 {
+                height: 20rem; /* Increased from 14rem (h-56) to 20rem */
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C4915C;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card:hover .shimmer-overlay {
+            animation-duration: 2s;
+        }
+        
+        .service-card .service-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 1.5rem;
+        }
+        
+        .service-card .pricing-section {
+            margin-top: auto;
+        }
+        
+        .btn-primary {
+            background-color: #C4915C;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            background-color: #A0826D;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:hover .shimmer-overlay {
+            animation-duration: 1.5s;
+        }
+        
+        .btn-secondary {
+            border: 2px solid #C4915C;
+            color: #C4915C;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #C4915C;
+            color: white;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:hover .shimmer-overlay {
+            animation-duration: 2s;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .typewriter-container {
+            display: inline-flex;
+            align-items: baseline;
+            white-space: nowrap;
+        }
+        
+        .typewriter-text {
+            overflow: hidden;
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(20, end) forwards;
+            width: 0;
+            display: inline-block;
+        }
+        
+        .blinking-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.25em;
+            background-color: #C4915C;
+            margin-left: 5px;
+            margin-top: 2em;
+            animation: blink-caret .75s step-end infinite;
+            animation-delay: 3.5s;
+            vertical-align: baseline;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            0%, 49% { opacity: 0 }
+            50%, 100% { opacity: 1 }
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+        
+        .lightbox-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Elegant Particle animation */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            will-change: transform;
+        }
+        
+        .particle-sparkle {
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #C4915C, #F8F6F0, #C4915C);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(196, 145, 92, 0.4), 0 0 30px rgba(196, 145, 92, 0.2);
+            filter: blur(0.5px);
+        }
+        
+        .particle-glow {
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(196, 145, 92, 0.3) 50%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .particle-shimmer {
+            width: 2px;
+            height: 2px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(196, 145, 92, 0.3);
+            opacity: 0.7;
+        }
+        
+        .particle-star {
+            width: 3px;
+            height: 3px;
+            background: #C4915C;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            filter: drop-shadow(0 0 8px rgba(196, 145, 92, 0.5));
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#2C1810] tracking-wide" style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #2C1810 0%, #C4915C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em;">Tatiana Angulo</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-[#2C1810] hover:text-[#C4915C]">Home</a>
+                <a href="#about" class="nav-link text-[#2C1810] hover:text-[#C4915C]">About</a>
+                <a href="#services" class="nav-link text-[#2C1810] hover:text-[#C4915C]">Services</a>
+                <a href="#masterclasses" class="nav-link text-[#2C1810] hover:text-[#C4915C]">Masterclasses</a>
+                <a href="#gallery" class="nav-link text-[#2C1810] hover:text-[#C4915C]">Gallery</a>
+                <a href="#contact" class="nav-link text-[#2C1810] hover:text-[#C4915C]">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-[#2C1810] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-[#F8F6F0] z-40 pt-20 px-6 md:hidden">
+        <div class="flex flex-col space-y-6 text-center">
+            <a href="#" class="text-xl text-[#2C1810] hover:text-[#C4915C]">Home</a>
+            <a href="#about" class="text-xl text-[#2C1810] hover:text-[#C4915C]">About</a>
+            <a href="#services" class="text-xl text-[#2C1810] hover:text-[#C4915C]">Services</a>
+            <a href="#masterclasses" class="text-xl text-[#2C1810] hover:text-[#C4915C]">Masterclasses</a>
+            <a href="#gallery" class="text-xl text-[#2C1810] hover:text-[#C4915C]">Gallery</a>
+            <a href="#contact" class="text-xl text-[#2C1810] hover:text-[#C4915C]">Contact</a>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-6">
+            <a href="https://www.instagram.com/tatianaangulomua" class="text-[#2C1810] hover:text-[#C4915C]"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="https://www.facebook.com/tatianaangulomua" class="text-[#2C1810] hover:text-[#C4915C]"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="https://www.tiktok.com/@tatianaangulomua" class="text-[#2C1810] hover:text-[#C4915C]"><i class="fab fa-tiktok text-2xl"></i></a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in">Tatiana Angulo</h1>
+            <h2 class="text-2xl md:text-3xl mb-6 fade-in">Makeup Artist</h2>
+            <div class="text-xl md:text-2xl mb-8">
+                <div class="typewriter-container">
+                    <span class="typewriter-text">Beauty with intention</span><span class="blinking-cursor"></span>
+                </div>
+            </div>
+            <p class="text-lg mb-10 max-w-2xl mx-auto slide-up">Not a mask — a mirror. Confidence with connection.</p>
+            <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-primary inline-block px-8 py-3 rounded-full text-white font-semibold slide-up">Book Your Session</a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#F8F6F0]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-[#2C1810]">About Tatiana</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="images/11_tati_hig res.jpg" alt="Tatiana Angulo" class="rounded-lg shadow-xl w-full h-auto max-h-[600px] object-cover">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="prose max-w-none text-[#2C1810]">
+                        <p class="mb-4">Makeup has been part of my story for as long as I can remember.</p>
+                        
+                        <p class="mb-4">It started with quiet moments watching my mother go through her skincare routine, seeing the care in her hands and the intention behind every movement. I watched my sisters get ready, and I still remember the first time one of them did my makeup for my quinceañera — I was 15, and something clicked. It wasn't just about how I looked; it was about how it made me feel.</p>
+                        
+                        <p class="mb-4">In the early days, makeup was something I used to cover up — to hide, to perfect, to blend in. That was back when I was living in Ecuador. But when I moved to Australia over 15 years ago, something shifted. I began to see makeup not as a mask, but as a mirror — a way to reconnect with myself, to embrace what I loved about my features, and to feel good in my own skin.</p>
+                        
+                        <p class="mb-4">I believe makeup is a tool — not for transformation, but for amplification. A way to highlight your natural beauty, express your mood, and most importantly, reconnect with your feminine energy.</p>
+                        
+                        <p class="mb-4">In a world that constantly pushes us to do more, achieve more, be more — makeup, like skincare, invites us to slow down, be present, and simply exist. It's not about superficial perfection. It's about self-love, ritual, and becoming the best version of yourself.</p>
+                        
+                        <p class="mb-4">That's the energy I bring into every masterclass and makeup session. I always remind my clients that this is a space to rewire your beliefs about beauty. To stop viewing makeup as a mask — and instead, start seeing it as an act of empowerment.</p>
+                        
+                        <p class="mb-8">There's no one who knows your face better than you. My mission is to help you fall in love with it again.</p>
+                        
+                        <p class="text-xl italic">Let's reconnect with who you really are — through the artistry of makeup.</p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-[#C4915C] bg-opacity-20 px-4 py-2 rounded-full">
+                            <span class="text-[#2C1810]">Co-Founder of Cosmetics by Tatiana</span>
+                        </div>
+                        <div class="bg-[#C4915C] bg-opacity-20 px-4 py-2 rounded-full">
+                            <span class="text-[#2C1810]">Based in Australia</span>
+                        </div>
+                        <div class="bg-[#C4915C] bg-opacity-20 px-4 py-2 rounded-full">
+                            <span class="text-[#2C1810]">15+ years experience</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-[#F0E6D6]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#2C1810]">Services</h2>
+            <p class="text-xl text-center mb-12 text-[#2C1810]">Tailored beauty experiences for every occasion</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="shimmer-overlay"></div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/3_tati_hig res.jpg" alt="Event & Occasion Makeup" class="w-full h-full object-cover" style="object-position: center 20%;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-bold mb-2 text-[#2C1810]">Event & Occasion Makeup</h3>
+                        <p class="text-gray-600 mb-4">Perfect for birthdays, formal events, and special moments</p>
+                        <ul class="mb-4 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Skin prep with skincare</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Long-wear camera-ready finish</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Add-on: Individual lashes +$20</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="far fa-clock text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Duration: 60–75 mins</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-section flex justify-between items-center">
+                            <span class="text-lg font-semibold text-[#2C1810]">From $120</span>
+                            <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-primary px-4 py-2 rounded-full text-white text-sm font-semibold">
+                                <div class="shimmer-overlay"></div>
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="shimmer-overlay"></div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/4_tati_hig res.jpg" alt="Natural Glam" class="w-full h-full object-cover" style="object-position: center 20%;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-bold mb-2 text-[#2C1810]">Natural Glam</h3>
+                        <p class="text-gray-600 mb-4">Ideal for content days, brunches, or everyday elevated glam</p>
+                        <ul class="mb-4 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Light to medium coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Glowy skin, soft definition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Enhances natural features</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-section flex justify-between items-center">
+                            <span class="text-lg font-semibold text-[#2C1810]">From $110</span>
+                            <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-primary px-4 py-2 rounded-full text-white text-sm font-semibold">
+                                <div class="shimmer-overlay"></div>
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="shimmer-overlay"></div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/2_tati_hig res.jpg" alt="Full Glam / Editorial Look" class="w-full h-full object-cover" style="object-position: center 20%;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-bold mb-2 text-[#2C1810]">Full Glam / Editorial Look</h3>
+                        <p class="text-gray-600 mb-4">For when you want to turn heads</p>
+                        <ul class="mb-4 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Defined contour, bold eyes/lips</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Faux freckles, liner, custom details</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Great for photo shoots or creative work</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-section flex justify-between items-center">
+                            <span class="text-lg font-semibold text-[#2C1810]">From $150</span>
+                            <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-primary px-4 py-2 rounded-full text-white text-sm font-semibold">
+                                <div class="shimmer-overlay"></div>
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="shimmer-overlay"></div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/6_tati_hig res.jpg" alt="Bridal Trial & Wedding Day" class="w-full h-full object-cover" style="object-position: center 20%;">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-bold mb-2 text-[#2C1810]">Bridal Trial & Wedding Day</h3>
+                        <p class="text-gray-600 mb-4">Tailored to your unique vision</p>
+                        <ul class="mb-4 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Trial included (4–6 weeks before recommended)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>On-location option available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#C4915C] mt-1 mr-2"></i>
+                                <span>Custom timeline planning</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-section flex justify-between items-center">
+                            <span class="text-lg font-semibold text-[#2C1810]">Quotes on request</span>
+                            <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-secondary px-4 py-2 rounded-full text-sm font-semibold">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optional Add-Ons -->
+            <div class="mt-16 bg-white rounded-lg p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center text-[#2C1810]">Optional Add-Ons</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex items-center">
+                        <div class="bg-[#C4915C] bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-cut text-[#C4915C]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-[#2C1810]">Hair Styling</h4>
+                            <p class="text-gray-600">Soft waves or sleek bun ($60)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-[#C4915C] bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-brush text-[#C4915C]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-[#2C1810]">Touch-up kit to go</h4>
+                            <p class="text-gray-600">($25)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-[#C4915C] bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-spa text-[#C4915C]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-[#2C1810]">Gua Sha mini ritual</h4>
+                            <p class="text-gray-600">Before makeup ($15)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-[#C4915C] bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-camera text-[#C4915C]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-[#2C1810]">Content day package</h4>
+                            <p class="text-gray-600">Makeup + BTS photos ($250 bundle)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Masterclasses Section -->
+    <section id="masterclasses" class="py-20 bg-[#F8F6F0]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#2C1810]">Masterclasses</h2>
+            <p class="text-xl text-center mb-12 text-[#2C1810]">A space to reconnect with your beauty, your power, and your reflection</p>
+            
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-2xl italic mb-6 text-[#2C1810]">"More than makeup."</p>
+                <p class="text-lg text-gray-700">
+                    Each masterclass I host is an intimate, empowering space where women come to reconnect with themselves through the art of beauty. Whether you're learning to enhance your everyday glow or master a sultry smokey eye, you'll leave with new skills — and a deeper connection to your feminine self.
+                </p>
+            </div>
+            
+            <!-- Upcoming Masterclasses -->
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold mb-4 text-[#2C1810] tracking-wide">Upcoming Masterclasses</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Join me for these exclusive, intimate experiences where beauty meets empowerment</p>
+            </div>
+            
+            <!-- Masterclasses Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Sip & Shade Masterclass -->
+                <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                <!-- Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-[#F0E6D6] via-[#E8D5C4] to-[#D4C4B0]"></div>
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#C4915C] opacity-10 rounded-full transform translate-x-32 -translate-y-32"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#D4AF37] opacity-10 rounded-full transform -translate-x-24 translate-y-24"></div>
+                
+                <div class="relative z-10 p-8 md:p-16">
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="w-full text-center">
+                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] text-white text-sm font-semibold rounded-full mb-4">FEATURED EVENT</div>
+                            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#2C1810] leading-tight">Sip & Shade: The Art of the Sultry Eye</h3>
+                        </div>
+                        <div class="w-full max-w-md mx-auto">
+                            <div class="relative group">
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                                <img src="images/SIP&SHADE.webp" alt="Sip & Shade Masterclass" class="relative rounded-2xl w-full h-auto shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            
+                            <!-- Event Details Cards -->
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-4 border border-[#C4915C] border-opacity-20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] rounded-full flex items-center justify-center mr-3">
+                                            <span class="text-white text-lg">📅</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 font-medium">Date & Time</p>
+                                            <p class="text-[#2C1810] font-bold">Saturday, 26 July</p>
+                                            <p class="text-[#C4915C] font-semibold">11am - 1pm AEST</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-4 border border-[#C4915C] border-opacity-20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] rounded-full flex items-center justify-center mr-3">
+                                            <span class="text-white text-lg">📍</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 font-medium">Location</p>
+                                            <p class="text-[#2C1810] font-bold">Willows & Wine</p>
+                                            <p class="text-[#C4915C] font-semibold">West Melbourne VIC</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                                An intimate beauty masterclass designed for women who want to master the timeless, sultry smoky eye, while enjoying an elegant space filled with wine, connections, and intentional self-expression.
+                            </p>
+                            
+                            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-[#C4915C] border-opacity-20">
+                                <h4 class="text-xl font-bold text-[#2C1810] mb-4 flex items-center">
+                                    <span class="w-8 h-8 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] rounded-full flex items-center justify-center mr-3">
+                                        <span class="text-white text-sm">✨</span>
+                                    </span>
+                                    What's Included
+                                </h4>
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Guided step-by-step masterclass on sultry, wearable smoky eye techniques</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Personalised tips based on your unique eye shape and features</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Glass of wine and nibbles</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Eye Brush Set (yours to keep)</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Eye Shadow Palette (yours to keep)</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#C4915C] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Luxe goodie bag with beauty treats</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="https://events.humanitix.com/sip-and-shade-the-art-of-the-sultry-eye" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#C4915C] to-[#D4AF37] text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                <span class="mr-2">Book Your Spot</span>
+                                <span class="text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Glow & Go Barcelona Masterclass -->
+                <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                <!-- Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-[#E8D5C4] via-[#F0E6D6] to-[#D4C4B0]"></div>
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#D4AF37] opacity-10 rounded-full transform -translate-x-32 -translate-y-32"></div>
+                <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-[#C4915C] opacity-10 rounded-full transform translate-x-24 translate-y-24"></div>
+                
+                <div class="relative z-10 p-8 md:p-16">
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="w-full text-center">
+                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] text-white text-sm font-semibold rounded-full mb-4">INTERNATIONAL EVENT</div>
+                            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#2C1810] leading-tight">Glow & Go - Barcelona Edition</h3>
+                        </div>
+                        <div class="w-full max-w-md mx-auto">
+                            <div class="relative group">
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] rounded-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-300"></div>
+                                <img src="images/GLOW&GO.webp" alt="Glow & Go Barcelona Masterclass" class="relative rounded-2xl w-full h-auto shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            
+                            <!-- Event Details Cards -->
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37] border-opacity-20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] rounded-full flex items-center justify-center mr-3">
+                                            <span class="text-white text-lg">📅</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 font-medium">Date & Time</p>
+                                            <p class="text-[#2C1810] font-bold">Thursday, 28 August</p>
+                                            <p class="text-[#C4915C] font-semibold">6pm - 9pm CEST</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37] border-opacity-20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] rounded-full flex items-center justify-center mr-3">
+                                            <span class="text-white text-lg">📍</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 font-medium">Location</p>
+                                            <p class="text-[#2C1810] font-bold">Local Javas Hub Cultural</p>
+                                            <p class="text-[#C4915C] font-semibold">Barcelona, Spain</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                                 Learn how to make the most of the products you already have in your makeup bag. With simple yet effective techniques, you'll achieve a fresh, radiant, and professional look—elevating your everyday makeup.
+                             </p>
+                            
+                            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-[#D4AF37] border-opacity-20">
+                                <h4 class="text-xl font-bold text-[#2C1810] mb-4 flex items-center">
+                                    <span class="w-8 h-8 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] rounded-full flex items-center justify-center mr-3">
+                                        <span class="text-white text-sm">✨</span>
+                                    </span>
+                                    What's Included
+                                </h4>
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="flex items-start">
+                                        <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">2 hours of hands-on teaching</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Personalized guidance and corrections</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Complete look: glowing skin, defined eyes, and intentional lips</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Surprise gift: an Australian product you can use daily</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                        <span class="text-gray-700">Relaxed, feminine, and inspiring environment</span>
+                                    </div>
+                                </div>
+                            </div>
+                             
+                             <a href="https://events.humanitix.com/glow-and-go-barcelona-edition" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                <span class="mr-2">Book Your Spot</span>
+                                <span class="text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Past Masterclasses Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#2C1810]">What We've Created Together</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600">Celebrating our previous transformative experiences</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Bring Your Bag Masterclass -->
+                <div class="bg-gradient-to-br from-[#F8F6F0] to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="images/Bring Your Bag, Boost Your Makeup.webp" alt="Bring Your Bag Masterclass" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2C1810]">Bring Your Bag, Boost Your Makeup</h3>
+                        <div class="flex items-center mb-4 text-[#C4915C] font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Adelaide — June 2025</span>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Guided product deep-dive using attendees' personal makeup bags</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Everyday-to-evening transformation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Focus: Skin prep, product layering, feminine intention</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Red Lip Ritual Masterclass -->
+                <div class="bg-gradient-to-br from-[#F8F6F0] to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                         <img src="images/5_tati_hig res.jpg" alt="Red Lip Ritual Masterclass" class="w-full h-64 object-cover object-[center_30%]">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                     </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2C1810]">Red Lip Ritual: Bold Looks, Bold Energy</h3>
+                        <div class="flex items-center mb-4 text-[#C4915C] font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Melbourne — March 2025</span>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Feminine energy activation through makeup</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Lip mapping + confidence ritual</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Group Gua Sha & glow prep session</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Ready Masterclass -->
+                <div class="bg-gradient-to-br from-[#F8F6F0] to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                         <img src="images/10_tati_hig res.jpg" alt="Content Ready Masterclass" class="w-full h-64 object-cover object-[center_30%]">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                     </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2C1810]">Content Ready: Makeup for the Camera</h3>
+                        <div class="flex items-center mb-4 text-[#C4915C] font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sydney — Feb 2025</span>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Techniques for content creators + business owners</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>Lighting, angles, long-wear performance</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-[#D4AF37] mr-2 mt-1">•</span>
+                                <span>In-collab with a local studio + photographer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-[#F8F6F0]">
+        <div class="container mx-auto px-4">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#2C1810]">What Clients Say</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C4915C] mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600">Hear from our amazing community</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="shimmer-overlay"></div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-[#F0E6D6] flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-[#C4915C] text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2C1810]">Sarah J.</h4>
+                            <div class="flex text-[#D4AF37]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Tatiana's masterclass helped me see makeup as self-love. I left feeling powerful and more connected to myself than ever before."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="shimmer-overlay"></div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-[#F0E6D6] flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-[#C4915C] text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2C1810]">Emma L.</h4>
+                            <div class="flex text-[#D4AF37]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"It was the most healing, beautiful girls' day — with glam. Tatiana creates such a warm, welcoming space to learn and connect."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="shimmer-overlay"></div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-[#F0E6D6] flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-[#C4915C] text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2C1810]">Priya K.</h4>
+                            <div class="flex text-[#D4AF37]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"I actually use everything I learned every day. The techniques Tatiana taught have completely transformed my makeup routine. So worth it!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#F0E6D6]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#2C1810]">Let's Connect</h2>
+            <p class="text-xl text-center mb-12 text-[#2C1810]">Ready to book your session or have questions?</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Left Column -->
+                <div class="space-y-8">
+                    <!-- Booking Information Container -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-[#2C1810]">Booking Information</h3>
+                        <p class="mb-6 text-gray-700">All bookings are handled through our secure booking platform. Click the button below to view available dates and times.</p>
+                        <a href="https://events.humanitix.com/host/tatiana-angulo" class="btn-primary inline-block px-6 py-3 rounded-full text-white font-semibold">Book Your Session</a>
+                    </div>
+                    
+                    <!-- Host a Private Class Container -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-[#2C1810]">Host a Private Class</h3>
+                        <p class="mb-4 text-gray-700">Want to bring a masterclass to your city, studio or event?</p>
+                        <p class="mb-6 text-gray-700">Enquire about hosting a private or branded class</p>
+                        <a href="mailto:hello@tatianaangulo.com?subject=Private%20Masterclass%20Enquiry" class="inline-block px-6 py-3 bg-[#C4915C] text-white rounded-full font-semibold hover:bg-[#A67C52] transition-colors duration-300">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div>
+                    <!-- Follow Along Container -->
+                     <div class="bg-white rounded-xl p-8 shadow-lg min-h-[600px]">
+                        <h3 class="text-2xl font-bold mb-6 text-[#2C1810]">Follow Along</h3>
+                        <p class="mb-6 text-gray-700">Join our community on social media for the latest looks, masterclass announcements, and beauty inspiration.</p>
+                        
+                        <div class="grid grid-cols-1 gap-3">
+                            <a href="https://www.instagram.com/tatianaangulomua" class="flex items-center px-4 py-3 bg-[#F0E6D6] rounded-lg hover:bg-[#C4915C] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-instagram text-2xl mr-3 text-[#2C1810]"></i>
+                                <span class="font-medium">Instagram</span>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/cosmeticsbytatiana" class="flex items-center px-4 py-3 bg-[#F0E6D6] rounded-lg hover:bg-[#C4915C] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-instagram text-2xl mr-3 text-[#2C1810]"></i>
+                                <span class="font-medium">Cosmetics by Tatiana</span>
+                            </a>
+                            
+                            <a href="https://au.pinterest.com/tatyanver/" class="flex items-center px-4 py-3 bg-[#F0E6D6] rounded-lg hover:bg-[#C4915C] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-pinterest text-2xl mr-3 text-[#2C1810]"></i>
+                                <span class="font-medium">Pinterest</span>
+                            </a>
+                            
+                            <a href="https://www.facebook.com/tatianaangulomua" class="flex items-center px-4 py-3 bg-[#F0E6D6] rounded-lg hover:bg-[#C4915C] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-facebook text-2xl mr-3 text-[#2C1810]"></i>
+                                <span class="font-medium">Facebook</span>
+                            </a>
+                            
+                            <a href="https://www.tiktok.com/@tatianaangulomua" class="flex items-center px-4 py-3 bg-[#F0E6D6] rounded-lg hover:bg-[#C4915C] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-tiktok text-2xl mr-3 text-[#2C1810]"></i>
+                                <span class="font-medium">TikTok</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#2C1810] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Tatiana Angulo</h3>
+                    <p class="text-[#C4915C]">Makeup Artist based in Melbourne, Australia</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://www.instagram.com/tatianaangulomua" class="text-white hover:text-[#C4915C]"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.facebook.com/tatianaangulomua" class="text-white hover:text-[#C4915C]"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="https://www.tiktok.com/@tatianaangulomua" class="text-white hover:text-[#C4915C]"><i class="fab fa-tiktok text-xl"></i></a>
+                    <a href="https://au.pinterest.com/tatyanver/" class="text-white hover:text-[#C4915C]"><i class="fab fa-pinterest text-xl"></i></a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p>&copy; 2025 Tatiana Angulo. All rights reserved.</p>
+                    <p class="text-sm text-[#C4915C] mt-1">Beauty with intention</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="">
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#C4915C] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Particle Animation Container -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <script>
+        // Diamond Sparkle Effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'diamond-sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 5000);
+        }
+        
+        function createShine() {
+            const shine = document.createElement('div');
+            shine.className = 'diamond-shine';
+            shine.style.left = Math.random() * 100 + '%';
+            shine.style.top = Math.random() * 100 + '%';
+            shine.style.animationDelay = Math.random() * 4 + 's';
+            shine.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(shine);
+            
+            setTimeout(() => {
+                shine.remove();
+            }, 7000);
+        }
+        
+        // Create sparkles and shines periodically
+        setInterval(createSparkle, 2000);
+        setInterval(createShine, 3000);
+        
+        // Create initial sparkles
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createSparkle, i * 500);
+            setTimeout(createShine, i * 700);
+        }
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                // Handle home button (scroll to top)
+                if (targetId === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Lightbox functionality
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightbox.style.display = 'block';
+            lightboxImg.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox when clicking outside the image
+        window.addEventListener('click', (event) => {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Gallery filtering
+        const filterButtons = document.querySelectorAll('.gallery-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-[#C4915C]', 'text-white');
+                    btn.classList.add('bg-white', 'text-[#2C1810]');
+                });
+                
+                button.classList.add('bg-[#C4915C]', 'text-white');
+                button.classList.remove('bg-white', 'text-[#2C1810]');
+                
+                // Filter items
+                const filterValue = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Elegant Particle animation
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 25; // Reduced for elegance
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random elegant particle type
+                const types = ['particle-sparkle', 'particle-glow', 'particle-shimmer', 'particle-star'];
+                const randomType = types[Math.floor(Math.random() * types.length)];
+                particle.classList.add(randomType);
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity for subtle effect
+                particle.style.opacity = Math.random() * 0.4 + 0.2;
+                
+                // Elegant animation patterns
+                const animations = ['elegantFloat', 'gentleDrift', 'softTwinkle', 'gracefulSway'];
+                const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+                const duration = Math.random() * 20 + 20; // Slower, more elegant
+                const delay = Math.random() * 8;
+                
+                particle.style.animation = `${randomAnimation} ${duration}s ease-in-out infinite`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                // Add to container
+                container.appendChild(particle);
+            }
+        }
+        
+        // Add elegant particle animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes elegantFloat {
+                0%, 100% {
+                    transform: translate(0, 0) rotate(0deg);
+                    opacity: 0.3;
+                }
+                25% {
+                    transform: translate(8px, -12px) rotate(45deg);
+                    opacity: 0.6;
+                }
+                50% {
+                    transform: translate(-5px, -20px) rotate(90deg);
+                    opacity: 0.4;
+                }
+                75% {
+                    transform: translate(-12px, -8px) rotate(135deg);
+                    opacity: 0.7;
+                }
+            }
+            
+            @keyframes gentleDrift {
+                0%, 100% {
+                    transform: translateX(0) translateY(0);
+                    opacity: 0.4;
+                }
+                50% {
+                    transform: translateX(15px) translateY(-10px);
+                    opacity: 0.8;
+                }
+            }
+            
+            @keyframes softTwinkle {
+                0%, 100% {
+                    opacity: 0.2;
+                    transform: scale(0.8);
+                }
+                50% {
+                    opacity: 0.9;
+                    transform: scale(1.2);
+                }
+            }
+            
+            @keyframes gracefulSway {
+                0%, 100% {
+                    transform: translateX(0) rotate(0deg);
+                    opacity: 0.3;
+                }
+                33% {
+                    transform: translateX(10px) rotate(120deg);
+                    opacity: 0.6;
+                }
+                66% {
+                    transform: translateX(-8px) rotate(240deg);
+                    opacity: 0.5;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
